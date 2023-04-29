@@ -2,8 +2,11 @@ package banco.conta;
 
 import banco.conta.corrente.Corrente;
 import banco.conta.corrente.CriarCorrente;
+import banco.conta.corrente.ExcluirCorrente;
+import banco.conta.corrente.EditarCorrente;
 import banco.conta.corrente.servico.ComprarCorrente;
 import banco.conta.corrente.servico.ConverterCorrente;
+import banco.conta.corrente.servico.DepositarCorrente;
 import banco.conta.corrente.servico.DoarCorrente;
 import banco.conta.corrente.servico.EnviarCorrente;
 import banco.conta.corrente.servico.ExtratoCorrente;
@@ -16,9 +19,12 @@ import banco.conta.corrente.servico.ServicoCorrente;
 import banco.conta.corrente.servico.VerificarCorrente;
 
 import banco.conta.poupanca.CriarPoupanca;
+import banco.conta.poupanca.ExcluirPoupanca;
+import banco.conta.poupanca.EditarPoupanca;
 import banco.conta.poupanca.Poupanca;
 import banco.conta.poupanca.servico.ComprarPoupanca;
 import banco.conta.poupanca.servico.ConverterPoupanca;
+import banco.conta.poupanca.servico.DepositarPoupanca;
 import banco.conta.poupanca.servico.DoarPoupanca;
 import banco.conta.poupanca.servico.EnviarPoupanca;
 import banco.conta.poupanca.servico.ExtratoPoupanca;
@@ -42,6 +48,10 @@ public class Tipo implements Conta{
                 else if(operacao == "converter"){
                     ServicoCorrente converter = new ConverterCorrente();
                     converter.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else if(operacao == "depositar"){
+                    ServicoCorrente depositar = new DepositarCorrente();
+                    depositar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
                 else if(operacao == "doar"){
                     ServicoCorrente doar = new DoarCorrente();
@@ -79,6 +89,14 @@ public class Tipo implements Conta{
                     ServicoCorrente verificar = new VerificarCorrente();
                     verificar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
+                else if(operacao == "editar"){
+                    Corrente editar = new EditarCorrente();
+                    editar.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else if(operacao == "excluir"){
+                    Corrente excluir = new ExcluirCorrente();
+                    excluir.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
             }
             else{
                 if(operacao == "comprar"){
@@ -88,6 +106,10 @@ public class Tipo implements Conta{
                 else if(operacao == "converter"){
                     ServicoPoupanca converter = new ConverterPoupanca();
                     converter.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else if(operacao == "depositar"){
+                    ServicoPoupanca depositar = new DepositarPoupanca();
+                    depositar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
                 else if(operacao == "doar"){
                     ServicoPoupanca doar = new DoarPoupanca();
@@ -125,16 +147,32 @@ public class Tipo implements Conta{
                     ServicoPoupanca verificar = new VerificarPoupanca();
                     verificar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
+                else if(operacao == "editar"){
+                    Poupanca editar = new EditarPoupanca();
+                    editar.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else if(operacao == "excluir"){
+                    Poupanca excluir = new ExcluirPoupanca();
+                    excluir.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
             }
         }
         else{
             if(tipo){
-                Corrente criar = new CriarCorrente();
-                criar.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                if(operacao == "criar"){
+                    Corrente criar = new CriarCorrente();
+                    criar.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else{
+                }
             }
             else{
-                Poupanca criar = new CriarPoupanca();
-                criar.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                if(operacao == "criar"){
+                    Poupanca criar = new CriarPoupanca();
+                    criar.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else{
+                }
             }
         }
     }
