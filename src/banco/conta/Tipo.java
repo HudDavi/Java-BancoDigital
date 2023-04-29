@@ -41,125 +41,129 @@ public class Tipo implements Conta{
     public void conta(boolean usuario, boolean tipo, int agencia, int conta, String nome, int cpf, double saldo, String operacao){
         if(usuario){
             if(tipo){
-                if(operacao == "comprar"){
+                if(operacao.equals("comprar")){
                     ServicoCorrente comprar = new ComprarCorrente();
                     comprar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "converter"){
+                else if(operacao.equals("converter")){
                     ServicoCorrente converter = new ConverterCorrente();
                     converter.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "depositar"){
+                else if(operacao.equals("depositar")){
                     ServicoCorrente depositar = new DepositarCorrente();
                     depositar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "doar"){
+                else if(operacao.equals("doar")){
                     ServicoCorrente doar = new DoarCorrente();
                     doar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "enviar"){
+                else if(operacao.equals("enviar")){
                     ServicoCorrente enviar = new EnviarCorrente();
                     enviar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "extrato"){
+                else if(operacao.equals("extrato")){
                     ServicoCorrente extrato = new ExtratoCorrente();
                     extrato.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "investir"){
+                else if(operacao.equals("investir")){
                     ServicoCorrente investir = new InvestirCorrente();
                     investir.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "pagar"){
+                else if(operacao.equals("pagar")){
                     ServicoCorrente pagar = new PagarCorrente();
                     pagar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "parcelar"){
+                else if(operacao.equals("parcelar")){
                     ServicoCorrente parcelar = new ParcelarCorrente();
                     parcelar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "receber"){
+                else if(operacao.equals("receber")){
                     ServicoCorrente receber = new ReceberCorrente();
                     receber.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "sacar"){
+                else if(operacao.equals("sacar")){
                     ServicoCorrente sacar = new SacarCorrente();
                     sacar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "verificar"){
+                else if(operacao.equals("verificar")){
                     ServicoCorrente verificar = new VerificarCorrente();
                     verificar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "editar"){
+                else if(operacao.equals("editar")){
                     Corrente editar = new EditarCorrente();
                     editar.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "excluir"){
+                else if(operacao.equals("excluir")){
                     Corrente excluir = new ExcluirCorrente();
                     excluir.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
+                else{
+                }
             }
             else{
-                if(operacao == "comprar"){
+                if(operacao.equals("comprar")){
                     ServicoPoupanca comprar = new ComprarPoupanca();
                     comprar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "converter"){
+                else if(operacao.equals("converter")){
                     ServicoPoupanca converter = new ConverterPoupanca();
                     converter.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "depositar"){
+                else if(operacao.equals("depositar")){
                     ServicoPoupanca depositar = new DepositarPoupanca();
                     depositar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "doar"){
+                else if(operacao.equals("doar")){
                     ServicoPoupanca doar = new DoarPoupanca();
                     doar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "enviar"){
+                else if(operacao.equals("enviar")){
                     ServicoPoupanca enviar = new EnviarPoupanca();
                     enviar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "extrato"){
+                else if(operacao.equals("extrato")){
                     ServicoPoupanca extrato = new ExtratoPoupanca();
                     extrato.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "investir"){
+                else if(operacao.equals("investir")){
                     ServicoPoupanca investir = new InvestirPoupanca();
                     investir.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "pagar"){
+                else if(operacao.equals("pagar")){
                     ServicoPoupanca pagar = new PagarPoupanca();
                     pagar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "parcelar"){
+                else if(operacao.equals("parcelar")){
                     ServicoPoupanca parcelar = new ParcelarPoupanca();
                     parcelar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "receber"){
+                else if(operacao.equals("receber")){
                     ServicoPoupanca receber = new ReceberPoupanca();
                     receber.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "sacar"){
+                else if(operacao.equals("sacar")){
                     ServicoPoupanca sacar = new SacarPoupanca();
                     sacar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "verificar"){
+                else if(operacao.equals("verificar")){
                     ServicoPoupanca verificar = new VerificarPoupanca();
                     verificar.servico(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "editar"){
+                else if(operacao.equals("editar")){
                     Poupanca editar = new EditarPoupanca();
                     editar.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
-                else if(operacao == "excluir"){
+                else if(operacao.equals("excluir")){
                     Poupanca excluir = new ExcluirPoupanca();
                     excluir.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
+                }
+                else{
                 }
             }
         }
         else{
             if(tipo){
-                if(operacao == "criar"){
+                if(operacao.equals("criar")){
                     Corrente criar = new CriarCorrente();
                     criar.corrente(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
@@ -167,7 +171,7 @@ public class Tipo implements Conta{
                 }
             }
             else{
-                if(operacao == "criar"){
+                if(operacao.equals("criar")){
                     Poupanca criar = new CriarPoupanca();
                     criar.poupanca(usuario, tipo, agencia, conta, nome, cpf, saldo);
                 }
